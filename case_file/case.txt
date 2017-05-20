@@ -1,3 +1,3 @@
-http://api.douban.com/labs/bubbler/user/   豆瓣   查询用户信息0   tabris17   uid=tabris17&id=1832573
-http://api.douban.com/labs/bubbler/user/   豆瓣   查询用户信息1   104562976   uid=104562976
-http://api.douban.com/labs/bubbler/user/   豆瓣   查询用户信息2   57514530   uid=57514530
+http://api.douban.com/labs/bubbler/user/tabris17   豆瓣   查询用户信息0   None   uid=tabris17&id=1832573
+http://api.douban.com/labs/bubbler/user/104562976   豆瓣   查询用户信息1   None   uid=104562976
+http://api.douban.com/labs/bubbler/user/57514530   豆瓣   查询用户信息2   None   uid=57514530

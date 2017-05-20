@@ -35,8 +35,8 @@ class UserRequestData(Base):
 
     def user_get_request_api(self, uri, data):
         """ http get method """
-        return self.request('get', uri + data, "")
+        return self.request('get', uri, data)
 
     def user_post_reques_api(self, url, data, data_type=None):
         """ http post method """
-        return self.request('post', url, data)
+        return self.request('post', url, data, data_type)
