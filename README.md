@@ -6,3 +6,10 @@
 示例如下：
 
 1: 编写测试case及基础数据（断言情况等）
+![case.txt](https://raw.githubusercontent.com/TesterlifeRaymond/doraemon/master/img/case-txt.png)
+
+2: 运行run文件后， 自动在`app/constructor/case`路径下生成case
+![python3 run.py](https://raw.githubusercontent.com/TesterlifeRaymond/doraemon/master/img/created-testcase.png)
+
+3: 当case 执行完成后， 会在`app/report`路径下生成`report.html`
+![report.html](https://raw.githubusercontent.com/TesterlifeRaymond/doraemon/master/img/text-case-report.png)
