@@ -5,10 +5,9 @@
 # @Date:   2017-05-20 06:54:40
 # @FileName:  active.py
 # @Project: base_test
-# @Last Modified by:   jinjialiu
-# @Last Modified time: 2017-05-20 11:02:12
+# @Last Modified by:   Ray
+# @Last Modified time: 2017-05-21 07:33:40
 """
-
 from functools import update_wrapper
 from . import use_http
 from ...constructor.use_case_operation import UseCaseOperation
@@ -20,7 +19,13 @@ def test_case_runner(function):
         """ wrap """
         func_name = function.__qualname__.split('_')[-1]
         case_info = UseCaseOperation.query_test_case_info(func_name=func_name, type=0)
-        response = use_http.user_get_request_api(case_info.get('uri'), case_info.get('body'))
+        print(func_name)
+        if 'GET' in func_name or 'GET' not in func_name and 'POST' not in func_name:
+            print('get')
+            response = use_http.user_get_request_api(case_info.get('uri'), case_info.get('body'))
+        else:
+            print('post')
+            response = use_http.user_post_reques_api(case_info.get('uri'), case_info.get('body'))
         kwassert = case_info.get('kwassert')
         if len(kwassert.split('=')) > 2:
             data = kwassert.split('&')

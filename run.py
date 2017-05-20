@@ -38,7 +38,7 @@ def main():
     try:
         unittest.main()
     except TypeError:
-        print(UseCaseOperation.clear_test_data())
+        UseCaseOperation.clear_test_data()
 
 if __name__ == '__main__':
     main()

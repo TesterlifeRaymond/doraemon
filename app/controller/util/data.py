@@ -5,9 +5,10 @@
 # @Date:   2017-05-20 08:10:44
 # @FileName:  data.py
 # @Project: base_test
-# @Last Modified by:   jinjialiu
-# @Last Modified time: 2017-05-20 10:59:04
+# @Last Modified by:   Ray
+# @Last Modified time: 2017-05-21 07:28:59
 """
+from json import loads
 from requests import Session
 
 
@@ -19,12 +20,14 @@ class Base:
 
     def request(self, method, uri, data, data_type=None):
         """ request active """
+        if data is None or data is False or data == '' or data == 0 or data == "None":
+            data = '{}'
         if method in ['get', 'GET']:
-            request = self.session.get(url=uri, params=data).json()
+            request = self.session.get(url=uri, params=loads(data)).json()
             return request
         if data_type == 'json':
-            return self.session.post(url=uri, json=data).json()
-        return self.session.post(url=uri, data=data).json()
+            return self.session.post(url=uri, json=loads(data)).json()
+        return self.session.post(url=uri, data=loads(data)).json()
 
 
 class UserRequestData(Base):
