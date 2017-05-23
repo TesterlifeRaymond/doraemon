@@ -7,7 +7,7 @@
 """
 # from app.constructor.use_case_operation import UseCaseOperation
 import unittest
-import BSTestRunner
+from app.controller.util import BSTestRunner
 import time
 from app.constructor.create_case import CreateCase
 from app.constructor.use_case_operation import UseCaseOperation
