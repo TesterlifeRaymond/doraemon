@@ -15,3 +15,8 @@
 
 3: 当case 执行完成后， 会在`app/report`路径下生成`report.html`
 ![report.html](https://raw.githubusercontent.com/TesterlifeRaymond/doraemon/master/img/text-case-report.png)
+
+4: 如果需要使用x-test 下游报表系统
+![x-test](https://raw.githubusercontent.com/TesterlifeRaymond/doraemon/master/img/x-test.png)
+
+`请参照 x-test wiki  http://api.apiapp.cc/static/wiki/index.html#id17 进行操作， 或查看 http://git.oschina.net/x-utest/xtest-python-demo`
