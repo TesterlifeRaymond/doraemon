@@ -600,7 +600,10 @@ class BSTestRunner(Template_mixin):
     def run(self, test):
         "Run the given test case or test suite."
         result = _TestResult(self.verbosity)
-        test(result)
+        try:
+            test(result)
+        except TypeError:
+            pass
         self.stopTime = datetime.datetime.now()
         self.generateReport(test, result)
         print('\n测试耗时: %s' % (self.stopTime-self.startTime))
