@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>TestReport_1495323716</title>
+    <title>TestReport_1495588613</title>
     <meta name="generator" content="BSTestRunner 0.8.4"/>
     <link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
     
@@ -149,10 +149,10 @@ function showOutput(id, name) {
 
 <div class="container">
     <div class='heading'>
-<h1>TestReport_1495323716</h1>
-<p><strong>Start Time:</strong> 2017-05-21 07:41:56</p>
-<p><strong>Duration:</strong> 0:00:02.316852</p>
-<p><strong>Status:</strong> <span class="text text-success">Pass <strong>5</strong></span></p>
+<h1>TestReport_1495588613</h1>
+<p><strong>Start Time:</strong> 2017-05-24 09:16:53</p>
+<p><strong>Duration:</strong> 0:00:02.016233</p>
+<p><strong>Status:</strong> <span class="text text-success">Pass <strong>3</strong></span> <span class="text text-danger">Failure <strong>2</strong></span></p>
 
 <p class='description'>自动化生成用例测试</p>
 </div>
@@ -196,11 +196,11 @@ function showOutput(id, name) {
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr class='text text-success'>
+<tr class='text text-danger'>
     <td>test_豆瓣.豆瓣: 这是豆瓣接口测试用例</td>
     <td>3</td>
-    <td>3</td>
-    <td>0</td>
+    <td>1</td>
+    <td>2</td>
     <td>0</td>
     <td><a class="btn btn-xs btn-primary"href="javascript:showClassDetail('c2',3)">Detail</a></td>
 </tr>
@@ -210,14 +210,79 @@ function showOutput(id, name) {
     <td colspan='5' align='center'>pass</td>
 </tr>
 
-<tr id='pt2.2' class='hiddenRow'>
-    <td class='text text-success'><div class='testcase'>test_查询用户信息0: 查询用户信息0 接口测试case</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr id='ft2.2' class='none'>
+    <td class='text text-danger'><div class='testcase'>test_查询用户信息0: 查询用户信息0 接口测试case</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.2')" >
+        fail</a>
+
+    <div id='div_ft2.2' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.2').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.2: Traceback (most recent call last):
+  File "/Users/creditease/PycharmProjects/doraemon/app/controller/util/active.py", line 30, in wrap
+    return function(*args, response=response, kwassert=result)
+  File "/Users/creditease/PycharmProjects/doraemon/app/controller/util/active.py", line 47, in wrap
+    return function(*args, response=response, exec_text=exec_text)
+  File "/Users/creditease/PycharmProjects/doraemon/app/constructor/case/test_豆瓣.py", line 26, in test_查询用户信息0
+    exec(item)
+  File "&lt;string&gt;", line 1, in &lt;module&gt;
+AssertionError: '1832573' != '1832574'
+- 1832573
+?       ^
++ 1832574
+?       ^
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
-<tr id='pt2.3' class='hiddenRow'>
-    <td class='text text-success'><div class='testcase'>test_查询用户信息1: 查询用户信息1 接口测试case</div></td>
-    <td colspan='5' align='center'>pass</td>
+<tr id='ft2.3' class='none'>
+    <td class='text text-danger'><div class='testcase'>test_查询用户信息1: 查询用户信息1 接口测试case</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link btn btn-xs btn-default" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.3')" >
+        fail</a>
+
+    <div id='div_ft2.3' class="popup_window">
+        <div style='text-align: right;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.3: Traceback (most recent call last):
+  File "/Users/creditease/PycharmProjects/doraemon/app/controller/util/active.py", line 31, in wrap
+    return function(*args, response=response, kwassert=case_info.get('kwassert'))
+  File "/Users/creditease/PycharmProjects/doraemon/app/controller/util/active.py", line 48, in wrap
+    return function(*args, response=response, kwassert=kwassert)
+  File "/Users/creditease/PycharmProjects/doraemon/app/constructor/case/test_豆瓣.py", line 42, in test_查询用户信息1
+    self.assertEqual(response.get(assert_key), assert_value)
+AssertionError: '104562976' != '104562975'
+- 104562976
+?         ^
++ 104562975
+?         ^
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
 </tr>
 
     </tbody>
@@ -225,8 +290,8 @@ function showOutput(id, name) {
         <tr id='total_row'>
             <td>Total</td>
             <td>5</td>
-            <td class="text text-success">5</td>
-            <td class="text text-danger">0</td>
+            <td class="text text-success">3</td>
+            <td class="text text-danger">2</td>
             <td class="text text-warning">0</td>
             <td>&nbsp;</td>
         </tr>
