@@ -6,7 +6,7 @@
 # @FileName:  data.py
 # @Project: base_test
 # @Last Modified by:   Ray
-# @Last Modified time: 2017-05-21 07:28:59
+# @Last Modified time: 2017-05-31 14:27:02
 """
 from json import loads
 from requests import Session

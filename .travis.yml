@@ -8,3 +8,5 @@ install:
 
 after_success:
     - coveralls
+
+script: nosetests tests --with-cov -v
