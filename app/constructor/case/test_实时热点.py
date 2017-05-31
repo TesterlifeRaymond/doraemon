@@ -17,8 +17,8 @@ class 实时热点(unittest.TestCase):
 
     @test_case_runner
     @test_case_parse
-    def test_POST请求(self, **kwargs):
-        """ POST请求 接口测试case """
+    def test_GET请求(self, **kwargs):
+        """ GET请求 接口测试case """
         response, kwassert = kwargs.get('response'), kwargs.get('kwassert')
 
         if kwargs.get('exec_text'):
@@ -30,8 +30,8 @@ class 实时热点(unittest.TestCase):
 
     @test_case_runner
     @test_case_parse
-    def test_GET请求(self, **kwargs):
-        """ GET请求 接口测试case """
+    def test_POST请求(self, **kwargs):
+        """ POST请求 接口测试case """
         response, kwassert = kwargs.get('response'), kwargs.get('kwassert')
 
         if kwargs.get('exec_text'):
