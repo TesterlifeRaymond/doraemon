@@ -6,16 +6,16 @@
 @ Project : base_test
 @ Create Time: 2017-05-19 17:26
 """
-from os import remove, listdir
+from os import listdir, remove
+
+from ..config import config, message
 from .use_case_operation import UseCaseOperation
-from ..config import config
-from ..config import message
 
 
 class FileMeta:
     """ read file headers and content.txt """
     old_cases = listdir(config.CREATE_CASE_PATH)
-    [remove(config.CREATE_CASE_PATH + item) for item in old_cases if item not in [
+    del_files = [remove(config.CREATE_CASE_PATH + item) for item in old_cases if item not in [
         '__init__.py', '__pycache__']]
     headers = open(config.CASE_HEADER_PATH, 'rb')
     content = open(config.CASE_CONTENT_PATH, 'rb')
@@ -61,7 +61,7 @@ class CreateCase:
         cls.import_files_case_to_sqlite()
         all_case_info = UseCaseOperation.query_test_case_info(type=0)
         class_enu = set()
-        for key, value in all_case_info.items():
+        for value in all_case_info.values():
             if value.get('class_name'):
                 class_enu.add(value.get('class_name'))
         return class_enu
@@ -70,12 +70,14 @@ class CreateCase:
     def get_case_function_name(cls):
         """ Get all the function names under the same name """
         result = {}
-        for index, class_name in enumerate(cls.get_case_class_name()):
-            case_info = UseCaseOperation.query_test_case_info(class_name=class_name, type=0)
+        for class_name in cls.get_case_class_name():
+            case_info = UseCaseOperation.query_test_case_info(
+                class_name=class_name, type=0)
             if not isinstance(list(case_info.keys())[0], int):
                 result.update({class_name: case_info.get('func_name')})
             else:
-                case_name = [value.get('func_name') for key, value in case_info.items()]
+                case_name = [value.get('func_name')
+                             for key, value in case_info.items()]
                 result.update({class_name: case_name})
         return result
 

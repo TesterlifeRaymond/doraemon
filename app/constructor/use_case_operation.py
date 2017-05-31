@@ -1,10 +1,14 @@
-"""
-@ Version : ??
-@ Author  : liujinjia
-@ File    : use_case_operation.py
-@ Project : base_test
-@ Create Time: 2017-05-19 17:07
-"""
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    use_case_operation.py                              :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ray <liujinjia@testerlife.com>             +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/05/31 15:34:16 by jinjialiu         #+#    #+#              #
+#    Updated: 2017/05/31 15:37:22 by ray              ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
 from ..controller import util
 
@@ -14,7 +18,7 @@ class UseCaseOperation:
 
     @classmethod
     @util.AddCaseWrapper("test_case")
-    def add_test_case(cls, uri=None, class_name=None, func_name=None, body=None):
+    def add_test_case(cls, uri=None, class_name=None, func_name=None, body=None, kwassert=None):
         """ 根据表字段增加test constructor """
 
     @classmethod

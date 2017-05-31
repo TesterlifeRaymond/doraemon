@@ -25,6 +25,7 @@ class CleaerTestCase(BaseSqlite):
         """ 装饰器主方法, function为被挂在该装饰器的函数对象"""
         def wrapper(*args, **kwargs):
             """ wrapper function， 用于对装饰器进行操作"""
+            del args
             self.session.query(self.table.type == 0).update({self.table.type: 1})
             self.session.commit()
             return self.session.query(self.table).filter_by(type=0).first()
