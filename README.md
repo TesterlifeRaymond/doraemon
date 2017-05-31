@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/TesterlifeRaymond/doraemon.svg?branch=master)](https://travis-ci.org/TesterlifeRaymond/doraemon)
+
 #   这是一个自动生成测试用例的项目, 您可以通过如下方式使用他
 
 > run in python3
