@@ -1,7 +1,7 @@
 {
     "python.pythonPath": "/usr/local/bin/python3",
-    "workbench.colorTheme": "One Monokai",
-    "workbench.iconTheme": "vs-minimal",
+    "workbench.colorTheme": "legacy",
+    "workbench.iconTheme": "ayu",
     "python.linting.pylintPath": "/Library/Frameworks/Python.framework/Versions/3.5/bin/pylint",
     "editor.fontFamily": "monaco",
     "window.zoomLevel": 0,
@@ -9,4 +9,15 @@
     "python.formatting.autopep8Path": "/Library/Frameworks/Python.framework/Versions/3.5/bin/autopep8",
     "42header.email": "liujinjia@testerlife.com",
     "42header.username": "ray",
+    "python.unitTest.unittestArgs": [
+        "-v",
+        "-s",
+        "./tests",
+        "-p",
+        "test*.py"
+    ],
+    "python.unitTest.nosetestArgs": [
+        "tests"
+    ],
+    "python.unitTest.nosetestsEnabled": true,
 }

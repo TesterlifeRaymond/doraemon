@@ -1,13 +1,17 @@
 
-"""
-# -*- coding: utf-8 -*-
-# @Author: liujinjia
-# @Date:   2017-05-20 06:54:40
-# @FileName:  active.py
-# @Project: base_test
-# @Last Modified by:   Ray
-# @Last Modified time: 2017-05-21 07:39:20
-"""
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    active.py                                          :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ray <liujinjia@testerlife.com>             +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/05/31 15:49:03 by ray               #+#    #+#              #
+#    Updated: 2017/05/31 15:49:03 by ray              ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+from json import loads
 from functools import update_wrapper
 from . import use_http
 from ...constructor.use_case_operation import UseCaseOperation
@@ -23,6 +27,9 @@ def test_case_runner(function):
             response = use_http.user_get_request_api(case_info.get('uri'), case_info.get('body'))
         else:
             response = use_http.user_post_reques_api(case_info.get('uri'), case_info.get('body'))
+        if isinstance(response, str):
+            response = loads(response)
+
         kwassert = case_info.get('kwassert')
         if len(kwassert.split('=')) > 2:
             data = kwassert.split('&')

@@ -1,13 +1,16 @@
 
-"""
-# -*- coding: utf-8 -*-
-# @Author: liujinjia
-# @Date:   2017-05-31 14:19:09
-# @FileName:  test_app_controller_util_data.py
-# @Project: doraemon
-# @Last Modified by:   Ray
-# @Last Modified time: 2017-05-31 14:38:20
-"""
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    test_app_controller_util_data.py                   :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ray <liujinjia@testerlife.com>             +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2017/05/31 17:35:52 by ray               #+#    #+#              #
+#    Updated: 2017/05/31 17:35:52 by ray              ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 from unittest import TestCase
 from app.controller.util.data import UserRequestData
 
