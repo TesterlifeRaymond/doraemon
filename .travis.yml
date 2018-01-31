@@ -9,4 +9,4 @@ install:
 after_success:
     - coveralls
 
-script: sh test_script.sh
+script: python3 -m unittest tests/test*.py
