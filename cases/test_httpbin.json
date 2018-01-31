@@ -2,7 +2,8 @@
   "test_1_ip_api": {
     "url": "http://httpbin.org/ip",
     "assert": {
-
+      "ResponseType": ["type", "dict"],
+      "origin": ["type", "str"]
     },
     "method": "get",
     "params": "",

@@ -7102,8 +7102,8 @@ body.skin-3 {
         {
             "className": "TestDoubanApi",
             "methodName": "test_douban_userinfo",
-            "description": "None",
-            "spendTime": "0.256 s",
+            "description": "测试豆瓣获取用户api的数据",
+            "spendTime": "0.162 s",
             "status": "成功",
             "log": [
                 "Response : {'count': 20, 'start': 0, 'users': ['len', 20]}",
@@ -7115,7 +7115,7 @@ body.skin-3 {
             "className": "TestGithubApi",
             "methodName": "test_some_endpoint",
             "description": "测试github api可用性",
-            "spendTime": "1.07 s",
+            "spendTime": "1.16 s",
             "status": "成功",
             "log": [
                 "Response : {'message': 'Not Found', 'documentation_url': 'https://developer.github.com/v3'}",
@@ -7127,11 +7127,11 @@ body.skin-3 {
             "className": "TestHttpbin",
             "methodName": "test_1_ip_api",
             "description": "测试httpbin的ip接口返回正常",
-            "spendTime": "0.75 s",
+            "spendTime": "0.585 s",
             "status": "成功",
             "log": [
-                "Response : {}",
-                "AssertInfo:  self.assertEqual({}, {})",
+                "Response : {'ResponseType': ['type', 'dict'], 'origin': ['type', 'str']}",
+                "AssertInfo:  self.assertEqual({\"ResponseType\": [\"type\", \"dict\"], \"origin\": [\"type\", \"str\"]}, {\"ResponseType\": [\"type\", \"dict\"], \"origin\": [\"type\", \"str\"]})",
                 ""
             ]
         },
@@ -7139,7 +7139,7 @@ body.skin-3 {
             "className": "TestHttpbin",
             "methodName": "test_2_headers_api",
             "description": "测试httpbin headers 接口返回正常",
-            "spendTime": "0.542 s",
+            "spendTime": "0.763 s",
             "status": "成功",
             "log": [
                 "Response : {'Connection': 'close', 'Host': 'httpbin.org', 'Accept-Encoding': 'gzip, deflate', 'User-Agent': 'BaiduSpider'}",
@@ -7151,7 +7151,7 @@ body.skin-3 {
             "className": "TestHttpbin",
             "methodName": "test_3_post_api",
             "description": "测试httpbin/post接口的请求与返回结果正确",
-            "spendTime": "0.757 s",
+            "spendTime": "1.76 s",
             "status": "成功",
             "log": [
                 "Response : {'username': 'Raymond', 'password': '123456'}",
@@ -7163,8 +7163,8 @@ body.skin-3 {
     "testName": "测试deafult报告",
     "testAll": 5,
     "testFail": 0,
-    "beginTime": "2018-01-31 18:35:32",
-    "totalTime": "3s",
+    "beginTime": "2018-01-31 19:30:14",
+    "totalTime": "4s",
     "testSkip": 0,
     "testError": 0
 };

@@ -39,17 +39,21 @@ def test_case_parse(func):
         """ parse wrap """
         response = kwargs.get('response')
         kwassert = kwargs.get('kwassert')
-        logger.info(kwassert)
         tmp = tuple(kwassert.keys())
-        response = GetDictParam.list_for_key_to_dict(*tmp, my_dict=response)
+        result = GetDictParam.list_for_key_to_dict(*tmp, my_dict=response)
         logger.info("response: {}".format(response))
         for key, value in kwassert.items():
             if isinstance(value, list):
                 tp, _value = value
-                response[key] = [tp, getattr(builtins, tp)(response.get(key))]
+                if tp == "type" and key == "ResponseType":
+                    result[key] = [tp, repr(getattr(builtins, tp)(response)).split("'")[1]]
+                elif tp == "type":
+                    result[key] = [tp, repr(getattr(builtins, tp)(_value)).split("'")[1]]
+                else:
+                    result[key] = [tp, getattr(builtins, tp)(result.get(key))]
 
         assert_resp_values = json.dumps(
-            response,
+            result,
             ensure_ascii=False,
             sort_keys=True,
         )
@@ -59,5 +63,5 @@ def test_case_parse(func):
         )
         logger.info("kwassert_values: {}".format(kwassert_values))
         exec_info = "self.assertEqual({}, {})".format(assert_resp_values, kwassert_values)
-        return func(*args, response=response, exec_text=exec_info)
+        return func(*args, response=result, exec_text=exec_info)
     return wrap
