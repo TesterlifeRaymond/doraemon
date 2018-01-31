@@ -38,7 +38,6 @@ class TestCaseLoader(GetDictParam, CasesManager):
         """ init class"""
         super(TestCaseLoader, self).__init__()
         self.files = os.listdir(CASE_PATH)
-        self.logger.debug("Load All Case Files: {}".format(self.files))
         self.data = {}
         self.tags = self.make_cases_info()
 
