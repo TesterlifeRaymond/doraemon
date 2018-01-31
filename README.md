@@ -5,9 +5,10 @@
 
 > run in python3
 当你git clone 该项目后,可以通过如下命令配置你的环境
-
+如果你习惯使用`venv`环境, 那么你可以进行如下操作
 ```python
 >>> cd doraemon
+>>> python3 -m venv venv
 >>> . venv/bin/activate
 >>> pip3 install -r requirements.txt
 ```
