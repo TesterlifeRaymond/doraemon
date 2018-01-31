@@ -1,0 +1,12 @@
+{
+  "test_douban_userinfo": {
+    "url": "https://api.douban.com/v2/user",
+    "params": "q=%E4%B8%89%E5%9B%BD%E6%BC%94%E4%B9%89",
+    "method": "get",
+    "assert": {
+      "count": 20,
+      "start": 0,
+      "users": ["len", 20]
+    }
+  }
+}

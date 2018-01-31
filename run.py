@@ -11,7 +11,7 @@ import unittest
 from BeautifulReport import BeautifulReport
 from src.lib import CreateCases
 
-CREATE_CASES_FILE_STATUS = CreateCases.CreateCase()
+CreateCases.CreateCase()
 
 
 @click.command()

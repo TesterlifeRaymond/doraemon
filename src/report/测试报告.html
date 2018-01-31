@@ -7097,50 +7097,74 @@ body.skin-3 {
 <script src="https://cdn.bootcss.com/chosen/1.8.2/chosen.jquery.js"></script>
 <script type="text/javascript">
     var resultData = {
-    "testPass": 3,
+    "testPass": 5,
     "testResult": [
         {
-            "className": "TestHistoryDay",
-            "methodName": "test_get_history_days",
-            "description": "测试历史上的今天接口, get请求",
-            "spendTime": "0.414 s",
+            "className": "TestDoubanApi",
+            "methodName": "test_douban_userinfo",
+            "description": "None",
+            "spendTime": "0.256 s",
             "status": "成功",
             "log": [
-                "Response : {'result': ['len', 0], 'error_code': 10005}",
-                "AssertInfo:  self.assertEqual({\"error_code\": 10005, \"result\": [\"len\", 0]}, {\"error_code\": 10005, \"result\": [\"len\", 0]})",
+                "Response : {'count': 20, 'start': 0, 'users': ['len', 20]}",
+                "AssertInfo:  self.assertEqual({\"count\": 20, \"start\": 0, \"users\": [\"len\", 20]}, {\"count\": 20, \"start\": 0, \"users\": [\"len\", 20]})",
                 ""
             ]
         },
         {
-            "className": "TestJuheApi",
-            "methodName": "test_get_methods",
-            "description": "通过get方法请求聚合微信精选接口.",
-            "spendTime": "0.319 s",
+            "className": "TestGithubApi",
+            "methodName": "test_some_endpoint",
+            "description": "测试github api可用性",
+            "spendTime": "1.07 s",
             "status": "成功",
             "log": [
-                "Response : {'reason': '请求成功'}",
-                "AssertInfo:  self.assertEqual({\"reason\": \"请求成功\"}, {\"reason\": \"请求成功\"})",
+                "Response : {'message': 'Not Found', 'documentation_url': 'https://developer.github.com/v3'}",
+                "AssertInfo:  self.assertEqual({\"documentation_url\": \"https://developer.github.com/v3\", \"message\": \"Not Found\"}, {\"documentation_url\": \"https://developer.github.com/v3\", \"message\": \"Not Found\"})",
                 ""
             ]
         },
         {
-            "className": "TestJuheApi",
-            "methodName": "test_post_methods",
-            "description": "通过post方法请求聚合微信精选接口, 并拿到正确的返回结果",
-            "spendTime": "0.189 s",
+            "className": "TestHttpbin",
+            "methodName": "test_1_ip_api",
+            "description": "测试httpbin的ip接口返回正常",
+            "spendTime": "0.75 s",
             "status": "成功",
             "log": [
-                "Response : {'reason': '请求成功', 'list': ['len', 30], 'error_code': 0}",
-                "AssertInfo:  self.assertEqual({\"error_code\": 0, \"list\": [\"len\", 30], \"reason\": \"请求成功\"}, {\"error_code\": 0, \"list\": [\"len\", 30], \"reason\": \"请求成功\"})",
+                "Response : {}",
+                "AssertInfo:  self.assertEqual({}, {})",
+                ""
+            ]
+        },
+        {
+            "className": "TestHttpbin",
+            "methodName": "test_2_headers_api",
+            "description": "测试httpbin headers 接口返回正常",
+            "spendTime": "0.542 s",
+            "status": "成功",
+            "log": [
+                "Response : {'Connection': 'close', 'Host': 'httpbin.org', 'Accept-Encoding': 'gzip, deflate', 'User-Agent': 'BaiduSpider'}",
+                "AssertInfo:  self.assertEqual({\"Accept-Encoding\": \"gzip, deflate\", \"Connection\": \"close\", \"Host\": \"httpbin.org\", \"User-Agent\": \"BaiduSpider\"}, {\"Accept-Encoding\": \"gzip, deflate\", \"Connection\": \"close\", \"Host\": \"httpbin.org\", \"User-Agent\": \"BaiduSpider\"})",
+                ""
+            ]
+        },
+        {
+            "className": "TestHttpbin",
+            "methodName": "test_3_post_api",
+            "description": "测试httpbin/post接口的请求与返回结果正确",
+            "spendTime": "0.757 s",
+            "status": "成功",
+            "log": [
+                "Response : {'username': 'Raymond', 'password': '123456'}",
+                "AssertInfo:  self.assertEqual({\"password\": \"123456\", \"username\": \"Raymond\"}, {\"password\": \"123456\", \"username\": \"Raymond\"})",
                 ""
             ]
         }
     ],
     "testName": "测试deafult报告",
-    "testAll": 3,
+    "testAll": 5,
     "testFail": 0,
-    "beginTime": "2018-01-31 16:56:26",
-    "totalTime": "1s",
+    "beginTime": "2018-01-31 18:35:32",
+    "totalTime": "3s",
     "testSkip": 0,
     "testError": 0
 };

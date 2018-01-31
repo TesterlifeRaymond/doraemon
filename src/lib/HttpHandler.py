@@ -46,8 +46,9 @@ class HttpHandler(GetDictParam):
         if method in ['get', 'GET']:
             tmp = ("url", "params", "headers", "cookies")
             body = self.list_for_key_to_dict(*tmp, my_dict=self.body)
-            if "&" in body.get('params') and "=" in body.get('params'):
-                body["params"] = dict(parse.parse_qsl(body["params"]))
+            if body.get('params'):
+                if "&" in body.get('params') and "=" in body.get('params'):
+                    body["params"] = dict(parse.parse_qsl(body["params"]))
             logger.info("GET *TMP: {}".format(self.list_for_key_to_dict(*tmp, my_dict=self.body)))
             return self.get(**body)
 

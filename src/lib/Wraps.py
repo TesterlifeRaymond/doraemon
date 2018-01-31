@@ -39,6 +39,7 @@ def test_case_parse(func):
         """ parse wrap """
         response = kwargs.get('response')
         kwassert = kwargs.get('kwassert')
+        logger.info(kwassert)
         tmp = tuple(kwassert.keys())
         response = GetDictParam.list_for_key_to_dict(*tmp, my_dict=response)
         logger.info("response: {}".format(response))
