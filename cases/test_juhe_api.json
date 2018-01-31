@@ -1,0 +1,34 @@
+{
+  "test_post_methods": {
+    "url":"http:\/\/v.juhe.cn\/weixin\/query",
+    "method":"post",
+    "desc":"通过post方法请求聚合微信精选接口, 并拿到正确的返回结果",
+    "data":{
+      "pno":1,
+      "ps":30,
+      "dtype":"json",
+      "key":"4beb9d77d2b95ce9bec6d8363ee5a620"
+    },
+    "assert":{
+      "reason":"请求成功",
+      "list":[
+        "len",
+        30
+      ],
+      "error_code":0
+    },
+    "schema":"juhe\/test_post_methods.json",
+    "headers":{
+      "User-Agent":"Mozilla\/5.0 (Macintosh; Intel Mac OS X 10_12_6) AppleWebKit\/537.36 (KHTML,  like Gecko) Chrome\/63.0.3239.132 Safari\/537.36"
+    }
+  },
+  "test_get_methods": {
+    "url":"http:\/\/v.juhe.cn\/weixin\/query",
+    "params":"pno=&ps=&dtype=&key=4beb9d77d2b95ce9bec6d8363ee5a620",
+    "method":"get",
+    "desc":"通过get方法请求聚合微信精选接口.",
+    "assert":{
+      "reason":"请求成功"
+    }
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "definitions": {},
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "properties": {
+    "reason": {
+      "$id": "/properties/reason",
+      "type": "string",
+      "title": "The Reason Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": "",
+      "examples": [
+        "请求成功"
+      ]
+    },
+    "result": {
+      "$id": "/properties/result",
+      "type": "object",
+      "properties": {
+        "list": {
+          "$id": "/properties/result/properties/list",
+          "type": "array",
+          "items": {
+            "$id": "/properties/result/properties/list/items",
+            "type": "object",
+            "properties": {
+              "id": {
+                "$id": "/properties/result/properties/list/items/properties/id",
+                "type": "string",
+                "title": "The Id Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "wechat_20180129021319"
+                ]
+              },
+              "title": {
+                "$id": "/properties/result/properties/list/items/properties/title",
+                "type": "string",
+                "title": "The Title Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "全国之最!喷高217米!衢州信安湖喷泉首秀~"
+                ]
+              },
+              "source": {
+                "$id": "/properties/result/properties/list/items/properties/source",
+                "type": "string",
+                "title": "The Source Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "衢州广电传媒"
+                ]
+              },
+              "firstImg": {
+                "$id": "/properties/result/properties/list/items/properties/firstImg",
+                "type": "string",
+                "title": "The Firstimg Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "http://zxpic.gtimg.com/infonew/0/wechat_pics_-62042849.static/640"
+                ]
+              },
+              "mark": {
+                "$id": "/properties/result/properties/list/items/properties/mark",
+                "type": "string",
+                "title": "The Mark Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  ""
+                ]
+              },
+              "url": {
+                "$id": "/properties/result/properties/list/items/properties/url",
+                "type": "string",
+                "title": "The Url Schema",
+                "description": "An explanation about the purpose of this instance.",
+                "default": "",
+                "examples": [
+                  "http://v.juhe.cn/weixin/redirect?wid=wechat_20180129021319"
+                ]
+              }
+            }
+          }
+        },
+        "totalPage": {
+          "$id": "/properties/result/properties/totalPage",
+          "type": "integer",
+          "title": "The Totalpage Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": 0,
+          "examples": [
+            10899
+          ]
+        },
+        "ps": {
+          "$id": "/properties/result/properties/ps",
+          "type": "integer",
+          "title": "The Ps Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": 0,
+          "examples": [
+            20
+          ]
+        },
+        "pno": {
+          "$id": "/properties/result/properties/pno",
+          "type": "integer",
+          "title": "The Pno Schema",
+          "description": "An explanation about the purpose of this instance.",
+          "default": 0,
+          "examples": [
+            1
+          ]
+        }
+      }
+    },
+    "error_code": {
+      "$id": "/properties/error_code",
+      "type": "integer",
+      "title": "The Error_code Schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": 0,
+      "examples": [
+        0
+      ]
+    }
+  }
+}

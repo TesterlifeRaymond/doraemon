@@ -1,0 +1,12 @@
+{
+  "test_get_history_days": {
+    "url": "http://api.juheapi.com/japi/toh",
+    "params": "v=&month=&day=&key=1d39d53a70ebed87d5cabbc8b73b96e2",
+    "method": "get",
+    "desc": "测试历史上的今天接口, get请求",
+    "assert": {
+      "result": ["len", 0],
+      "error_code": 10005
+    }
+  }
+}

@@ -1,9 +1,0 @@
-http://api.douban.com/labs/bubbler/user/tabris17   豆瓣   查询用户信息0   None   uid=tabris17&id=1832574
-http://api.douban.com/labs/bubbler/user/104562976   豆瓣   查询用户信息1   None   uid=104562975
-http://api.douban.com/labs/bubbler/user/57514530   豆瓣   POST查询用户信息2   None   uid=57514530
-http://op.juhe.cn/onebox/news/words   实时热点   GET请求   {"key": "e53c5f18346ba5e40309fdf7574ee25b", "dtype": ""}   reason=查询成功
-http://op.juhe.cn/onebox/news/words   实时热点   POST请求   {"key": "e53c5f18346ba5e40309fdf7574ee25b", "dtype": ""}   reason=查询成功
-http://182.92.178.14/api/v1/login   登陆接口测试   POST正确的登陆参数   {"username": "liujinjia", "password": "123456"}   username=liujinjia&code=200&message=success
-http://182.92.178.14/api/v1/login   登陆接口测试   POST错误的登陆参数   {"username": "liujinjia", "password": "12345678"}   code=200&username=liujinjia&auth=user&message=failed
-http://182.92.178.14/api/v1/userQuestion   用户历史答题记录   POST查询用户全部历史答题信息   {"username": "liujinjia"}   message=success
-http://182.92.178.14/api/v1/userScore   用户历史答题记录   POST指定查询某次历史答题记录   {"username": "liujinjia", "score_id": "9"}   titleNum=30&correctNum=8

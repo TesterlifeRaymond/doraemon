@@ -1,61 +1,27 @@
-
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    run.py                                             :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: ray <liujinjia@testerlife.com>             +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2017/05/31 15:36:01 by jinjialiu         #+#    #+#              #
-#    Updated: 2017/05/31 15:37:20 by ray              ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
-import time
+# -*- coding: utf-8 -*-
+"""
+@File: run
+@Author: Ray
+@: 2018-01-29 15:14:46
+@Version: 1.0
+"""
+import click
 import unittest
+from BeautifulReport import BeautifulReport
+from lib import CreateCases
 
-from app.config import config
-from app.constructor.create_case import CreateCase
-from app.constructor.use_case_operation import UseCaseOperation
-from app.controller.util import BSTestRunner
-from app.controller.util.xtest import TestReport, dict_encode_test_results
-
-CASE_PATH = CreateCase.create_unittest_files().get('case_path')
-REPORT_PATH = 'app/report/report.html'
+CREATE_CASES_FILE_STATUS = CreateCases.CreateCase()
 
 
-def load_tests(loader, tests, pattern):
-    """
-    Discover and load all unit tests in all files named
-    ``test_*.py`` in ./src/app/
-    """
-    start_time = time.time()  # 测试启动的时刻点
-    suite = unittest.defaultTestLoader.discover(CASE_PATH, pattern='test_*.py')
-    if config.SWITCH:
-        test_result = unittest.TextTestRunner().run(suite)  # 运行测试套件，并返回测试结果
-        total_time = time.time() - start_time  # 测试过程整体的耗时
-        test_res_dict = dict_encode_test_results(
-            test_result,
-            run_time=total_time,
-            pro_version='1.0'  # 当前被测试的系统的版本号,依据目前系统的信息，如果服务端提供接口，则可以做成自动化的
-        )
-        test_report = TestReport()
-        auth_res = test_report.get_api_auth()
-        if auth_res:
-            test_report.post_unit_test_data(test_res_dict)
-        else:
-            raise PermissionError('auth error...')
-    else:
-        with open(REPORT_PATH, 'wb') as files:
-            runner = BSTestRunner.BSTestRunner(
-                files,
-                title='TestReport_{0}'.format(int(time.time())),
-                description=u'自动化生成用例测试'
-            )
-            runner.run(suite)
+@click.command()
+@click.option('--cases', default='testcases/', help="case file path")
+@click.option('--pattern', default='*.py', help="get cases file pattern")
+@click.option('--report', default='report/', help="generator report in path")
+def run(cases, pattern, report):
+    test_suite = unittest.defaultTestLoader.discover(cases, pattern=pattern)
+    result = BeautifulReport(test_suite)
+    result.report(filename='测试报告', description='测试deafult报告', log_path=report)
+
 
 if __name__ == '__main__':
-    try:
-        unittest.main()
-    except TypeError:
-        UseCaseOperation.clear_test_data()
+    run()
