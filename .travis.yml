@@ -9,4 +9,4 @@ install:
 after_success:
     - coveralls
 
-script: python3 run.py
+script: python3 -m unittest tests/test_doraemon_package.py
