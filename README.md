@@ -41,8 +41,9 @@
 * key表示测试方法名, 如果需要case有序执行, 可以将示例中: test_get_history_days 修改为`test_1_get_history_days`
 * key对应的字典, 是这条case中所有的需要用到的参数, 目前支持结构体如下
 
+
 key | value | Sample
-- | :-: | |
+------------ | -------------
 url | 对应接口地址 | http://api.juheapi.com/japi/toh
 method | 请求方法 | get
 desc | 测试报告对应的用例描述信息 |  测试历史上的今天接口, get请求
