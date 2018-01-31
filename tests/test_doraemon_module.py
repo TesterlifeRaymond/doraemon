@@ -6,10 +6,8 @@
 @File: test_doraemon_module.py.py
 @License: MIT
 """
-
+import os
 import unittest
-
-from src.lib import CasesContainer
 
 
 class DoraemonTest(unittest.TestCase):
@@ -20,4 +18,4 @@ class DoraemonTest(unittest.TestCase):
         """ pass """
 
     def test_doraemon_is_ok(self):
-        self.assertIsNotNone(CasesContainer)
+        self.assertIsNotNone(os.listdir('src/report'))
