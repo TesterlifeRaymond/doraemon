@@ -12,7 +12,7 @@ from ..lib import GetDictParam, CasesManager, CasesContainer
 # PATH
 
 
-CASE_PATH = 'src/cases/'
+CASE_PATH = 'cases/'
 TESTCASES_PATH = 'src/testcases/'
 REPORT_PATH = 'src/report/'
 HEADERS_TEMPLATE_PATH = 'src/template/header.txt'
