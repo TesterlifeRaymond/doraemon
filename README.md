@@ -8,7 +8,6 @@
 如果你习惯使用`venv`环境, 那么你可以进行如下操作
 ```python
 >>> cd doraemon
->>> python3 -m venv venv
 >>> . venv/bin/activate
 >>> pip3 install -r requirements.txt
 ```
