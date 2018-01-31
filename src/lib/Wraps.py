@@ -48,7 +48,7 @@ def test_case_parse(func):
                 if tp == "type" and key == "ResponseType":
                     result[key] = [tp, repr(getattr(builtins, tp)(response)).split("'")[1]]
                 elif tp == "type":
-                    result[key] = [tp, repr(getattr(builtins, tp)(_value)).split("'")[1]]
+                    result[key] = [tp, repr(getattr(builtins, tp)(result.get(key))).split("'")[1]]
                 else:
                     result[key] = [tp, getattr(builtins, tp)(result.get(key))]
 
