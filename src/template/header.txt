@@ -1,0 +1,16 @@
+# -*- coding: utf-8 -*-
+
+""" 测试工具自动生成的case """
+
+import unittest
+from src.lib import Wraps
+
+
+class {}(unittest.TestCase):
+    """这是{}接口测试用例"""
+
+    def setUp(self):
+        """ test setup function """
+
+    def tearDown(self):
+        """ test case tearDown function """

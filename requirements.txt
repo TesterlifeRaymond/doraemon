@@ -1,2 +1,2 @@
-requests==2.13.0
-SQLAlchemy==1.1.6
+click==6.7
+requests==2.18.4
