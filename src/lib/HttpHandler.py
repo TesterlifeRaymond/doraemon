@@ -15,6 +15,7 @@ from .Recursion import GetDictParam
 from urllib import parse
 
 logger = LogHandler(__name__)
+SESSION = Session()
 
 
 class HttpHandler(GetDictParam):
@@ -30,7 +31,7 @@ class HttpHandler(GetDictParam):
     @return: Response<status_code>
     """
     def __init__(self, request_bodys):
-        self.session = Session()
+        self.session = SESSION
         self.body = request_bodys
 
     def make_request_template(self):
