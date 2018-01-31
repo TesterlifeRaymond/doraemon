@@ -45,6 +45,7 @@
 
 key | value | Sample
 ------------ | -------------| ----------------
+ResponseType| 验证返回结构体类型 | {"ResponseType": ["type", "dict"]}(支持字段类型验证)   
 url | 对应接口地址 | http://api.juheapi.com/japi/toh
 method | 请求方法 | get
 desc | 测试报告对应的用例描述信息 |  测试历史上的今天接口, get请求
