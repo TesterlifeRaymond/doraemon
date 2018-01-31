@@ -9,4 +9,4 @@ install:
 after_success:
     - coveralls
 
-script: nosetests tests --with-cov -v
+script: python3 -m unittest tests/test_doraemon_module.py
