@@ -6,17 +6,17 @@
 """
 import json
 import os
-from lib.LogHandler import LogHandler
-from lib import GetDictParam, CasesManager, CasesContainer
+from ..lib.LogHandler import LogHandler
+from ..lib import GetDictParam, CasesManager, CasesContainer
 
 # PATH
 
 
-CASE_PATH = 'cases/'
-TESTCASES_PATH = 'testcases/'
-REPORT_PATH = 'report/'
-HEADERS_TEMPLATE_PATH = 'template/header.txt'
-CONTENT_TEMPLATE_PATH = 'template/content.txt'
+CASE_PATH = 'src/cases/'
+TESTCASES_PATH = 'src/testcases/'
+REPORT_PATH = 'src/report/'
+HEADERS_TEMPLATE_PATH = 'src/template/header.txt'
+CONTENT_TEMPLATE_PATH = 'src/template/content.txt'
 DEBUG_INFO = 1
 
 

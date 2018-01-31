@@ -8,15 +8,15 @@
 import click
 import unittest
 from BeautifulReport import BeautifulReport
-from lib import CreateCases
+from src.lib import CreateCases
 
 CREATE_CASES_FILE_STATUS = CreateCases.CreateCase()
 
 
 @click.command()
-@click.option('--cases', default='testcases/', help="case file path")
+@click.option('--cases', default='src/testcases/', help="case file path")
 @click.option('--pattern', default='*.py', help="get cases file pattern")
-@click.option('--report', default='report/', help="generator report in path")
+@click.option('--report', default='src/report/', help="generator report in path")
 def run(cases, pattern, report):
     test_suite = unittest.defaultTestLoader.discover(cases, pattern=pattern)
     result = BeautifulReport(test_suite)
