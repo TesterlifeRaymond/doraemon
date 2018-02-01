@@ -63,6 +63,6 @@ def test_case_parse(func):
         kwassert_values = json.dumps(
             kwassert, ensure_ascii=False, sort_keys=True
         )
-        exec_info = "self.assertEqual({}, {})".format(assert_resp_values, kwassert_values)
-        return func(*args, response=result, exec_text=exec_info)
+        exec_info = "self.assertEqual({}, {})".format(assert_resp_values, kwassert_values).replace("null", "None")
+        return func(*args, response=response, exec_text=exec_info)
     return wrap
