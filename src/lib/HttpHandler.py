@@ -61,7 +61,7 @@ class HttpHandler(GetDictParam):
             raise AttributeError("错误的请求方法, 请检查配置文件中的请求方法, 目前只支持['GET', 'POST']")
 
     def post(self, **kwargs: dict) -> dict:
-        return self.session.post(**kwargs, verify=False).json()
+        return self.session.post(**kwargs).json()
 
     def get(self, **kwargs: dict) -> dict:
-        return self.session.get(**kwargs, verify=False).json()
+        return self.session.get(**kwargs).json()
