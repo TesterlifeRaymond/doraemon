@@ -1,13 +1,16 @@
 {
-  "test_douban_userinfo": {
-    "url": "https://api.douban.com/v2/user",
-    "params": "q=%E4%B8%89%E5%9B%BD%E6%BC%94%E4%B9%89",
-    "method": "get",
-    "assert": {
-      "count": 20,
-      "start": 0,
-      "users": ["len", 20]
-    },
-    "desc": "测试豆瓣获取用户api的数据"
-  }
+    "test_douban_userinfo": {
+        "url": "https://api.douban.com/v2/user",
+        "params": "q=%E4%B8%89%E5%9B%BD%E6%BC%94%E4%B9%89",
+        "method": "get",
+        "assert": {
+            "count": 20,
+            "start": 0,
+            "users": [
+                "len",
+                20
+            ]
+        },
+        "desc": "\u6d4b\u8bd5\u8c46\u74e3\u83b7\u53d6\u7528\u6237api\u7684\u6570\u636e"
+    }
 }

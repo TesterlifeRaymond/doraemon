@@ -1,40 +1,46 @@
 {
-  "test_1_ip_api": {
-    "url": "http://httpbin.org/ip",
-    "assert": {
-      "ResponseType": ["type", "dict"],
-      "origin": ["type", "str"]
+    "test_1_ip_api": {
+        "url": "http://httpbin.org/ip",
+        "assert": {
+            "ResponseType": [
+                "type",
+                "dict"
+            ],
+            "origin": [
+                "type",
+                "str"
+            ]
+        },
+        "method": "get",
+        "params": "",
+        "desc": "\u6d4b\u8bd5httpbin\u7684ip\u63a5\u53e3\u8fd4\u56de\u6b63\u5e38"
     },
-    "method": "get",
-    "params": "",
-    "desc": "测试httpbin的ip接口返回正常"
-  },
-  "test_2_headers_api": {
-    "url": "http://httpbin.org/headers",
-    "method": "get",
-    "params": "",
-    "headers": {
-      "User-Agent": "BaiduSpider"
+    "test_2_headers_api": {
+        "url": "http://httpbin.org/headers",
+        "method": "get",
+        "params": "",
+        "headers": {
+            "User-Agent": "BaiduSpider"
+        },
+        "assert": {
+            "Connection": "close",
+            "Host": "httpbin.org",
+            "Accept-Encoding": "gzip, deflate",
+            "User-Agent": "BaiduSpider"
+        },
+        "desc": "\u6d4b\u8bd5httpbin headers \u63a5\u53e3\u8fd4\u56de\u6b63\u5e38"
     },
-    "assert": {
-      "Connection": "close",
-      "Host": "httpbin.org",
-      "Accept-Encoding": "gzip, deflate",
-      "User-Agent": "BaiduSpider"
-    },
-    "desc": "测试httpbin headers 接口返回正常"
-  },
-  "test_3_post_api": {
-    "url": "http://httpbin.org/post",
-    "data": {
-      "username": "Raymond",
-      "password": "123456"
-    },
-    "method": "post",
-    "desc": "测试httpbin/post接口的请求与返回结果正确",
-    "assert":{
-      "username": "Raymond",
-      "password": "123456"
+    "test_3_post_api": {
+        "url": "http://httpbin.org/post",
+        "data": {
+            "username": "Raymond",
+            "password": "123456"
+        },
+        "method": "post",
+        "desc": "\u6d4b\u8bd5httpbin/post\u63a5\u53e3\u7684\u8bf7\u6c42\u4e0e\u8fd4\u56de\u7ed3\u679c\u6b63\u786e",
+        "assert": {
+            "username": "Raymond",
+            "password": "123456"
+        }
     }
-  }
 }

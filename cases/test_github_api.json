@@ -1,12 +1,12 @@
 {
-  "test_some_endpoint": {
-    "url": "https://api.github.com/some/endpoint",
-    "method": "get",
-    "desc": "测试github api可用性",
-    "param": "",
-    "assert": {
-      "message": "Not Found",
-      "documentation_url": "https://developer.github.com/v3"
+    "test_some_endpoint": {
+        "url": "https://api.github.com/some/endpoint",
+        "method": "get",
+        "desc": "\u6d4b\u8bd5github api\u53ef\u7528\u6027",
+        "param": "",
+        "assert": {
+            "message": "Not Found",
+            "documentation_url": "https://developer.github.com/v3"
+        }
     }
-  }
 }
