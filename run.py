@@ -8,7 +8,7 @@
 import click
 import os
 import unittest
-from BeautifulReport import BeautifulReport
+from src.lib.BeautifulReport import BeautifulReport
 from src.lib import CreateCases
 
 CreateCases.CreateCase()
