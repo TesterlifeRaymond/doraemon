@@ -17,10 +17,10 @@ import builtins
 logger = LogHandler(__name__)
 
 
-def test_case_runner(func) -> function:
+def test_case_runner(func):
     """ test case runner """
     @wraps(func)
-    def wrap(*args: tuple) -> function:
+    def wrap(*args: tuple):
         for item in iter(CreateCase()):
             for key, value in item.items():
                 if value == func.__name__:
@@ -36,10 +36,10 @@ def test_case_runner(func) -> function:
     return wrap
 
 
-def test_case_parse(func) -> function:
+def test_case_parse(func):
     """ test case reponse parse """
     @wraps(func)
-    def wrap(*args: tuple, **kwargs: dict) -> function:
+    def wrap(*args: tuple, **kwargs: dict):
         """ parse wrap """
         response = kwargs.get('response')
         kwassert = kwargs.get('kwassert')
