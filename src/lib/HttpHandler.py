@@ -28,11 +28,11 @@ class HttpHandler(GetDictParam):
         @member cookies -> cookies
     @return: Response<status_code>
     """
-    def __init__(self, request_bodys):
+    def __init__(self, request_bodys: dict):
         self.session = SESSION
         self.body = request_bodys
 
-    def make_request_template(self):
+    def make_request_template(self) -> dict:
         """
             make request body headers cookies and methods
         :return:
@@ -60,8 +60,8 @@ class HttpHandler(GetDictParam):
         else:
             raise AttributeError("错误的请求方法, 请检查配置文件中的请求方法, 目前只支持['GET', 'POST']")
 
-    def post(self, **kwargs):
+    def post(self, **kwargs: dict) -> dict:
         return self.session.post(**kwargs).json()
 
-    def get(self, **kwargs):
+    def get(self, **kwargs: dict) -> dict:
         return self.session.get(**kwargs).json()

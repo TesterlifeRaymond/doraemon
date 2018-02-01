@@ -15,20 +15,20 @@ logger = LogHandler(__name__)
 
 
 class CasesManager:
-    def __init__(self, path=None):
+    def __init__(self, path: str=None):
         self.datas = {}
         self.path = path
         if not self.path:
             self.path = CASE_PATH
 
-    def get_all_cases(self):
+    def get_all_cases(self) -> list:
         """
             返回cases 路径下全部case文件列表
         :return:
         """
         return os.listdir(self.path)
 
-    def read_cases_json(self, file_name):
+    def read_cases_json(self, file_name: str) -> str:
         """
             读取json中的case信息
         :return: json中的case信息
@@ -39,7 +39,7 @@ class CasesManager:
         except Exception as err:
             logger.error("解析json 测试用例时出错, 出错文件: {}, 错误信息: {}".format(file_name, err))
 
-    def make_cases_info(self):
+    def make_cases_info(self) -> list:
         """
             构造完整的测试用例信息集合
         :return:
@@ -52,10 +52,10 @@ class CasesManager:
 
 
 class CasesContainer:
-    def __init__(self, body):
+    def __init__(self, body: dict):
         self.body = body
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return 'CasesContainer<{}:{}>'.format(
             self.body.get('class_name'),
             self.body.get('methods_name')

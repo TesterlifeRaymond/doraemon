@@ -51,7 +51,7 @@ class TestCaseLoader(GetDictParam, CasesManager):
         self.data = {}
         self.tags = self.make_cases_info()
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         """
             return repr obj
         :return:

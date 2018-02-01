@@ -8,6 +8,7 @@
 """
 import os
 import json
+import types
 from .LogHandler import LogHandler
 from ..config import config
 
@@ -32,7 +33,7 @@ class FileMeta(config.GetDictParam):
         self.cont = self.content.read()
         return self
 
-    def make_headers(self, class_name, func_name, desc):
+    def make_headers(self, class_name: str, func_name, desc: str) -> None:
         """
             make test cases headers
         :return:
@@ -45,7 +46,7 @@ class FileMeta(config.GetDictParam):
         with open(filepath, 'a', encoding='utf-8') as file:
             file.write(self.cont.format(func_name, desc))
 
-    def generating_template(self):
+    def generating_template(self) -> types.GeneratorType:
         """
             通过context manager管理上下文读写并关闭文件
         @param : value
@@ -92,11 +93,11 @@ class CreateCase:
                 obj.body['desc'])
             data.append(obj.body)
 
-    def __iter__(self):
+    def __iter__(self) -> iter:
         return iter(self.data)
 
     def __call__(self):
         return next(self.data)
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return json.dumps(self.data)

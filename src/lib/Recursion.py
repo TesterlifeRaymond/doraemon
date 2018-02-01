@@ -12,7 +12,7 @@ class GetDictParam:
         可以用于多参数的指定key 、 指定key集合解析key
     """
     @classmethod
-    def get_value(cls, my_dict, key):
+    def get_value(cls, my_dict: dict, key: str):
         """
             这是一个递归函数
         """
@@ -33,7 +33,7 @@ class GetDictParam:
                     return cls.get_value(my_dict_arr, key)
 
     @classmethod
-    def list_for_key_to_dict(cls, *args, my_dict):
+    def list_for_key_to_dict(cls, *args: tuple, my_dict: dict) -> dict:
         """
             接收需要解析的dict和 需要包含需要解析my_dict的keys的list
         :param my_dict: 需要解析的字典
