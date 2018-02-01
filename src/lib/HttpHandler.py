@@ -7,8 +7,6 @@
 @License: MIT
 """
 import json
-
-import os
 from requests import Session
 from .LogHandler import LogHandler
 from .Recursion import GetDictParam

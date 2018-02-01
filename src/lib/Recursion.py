@@ -46,4 +46,3 @@ class GetDictParam:
             for key in args:
                 result.update({key: cls.get_value(my_dict, key)})
         return result
-

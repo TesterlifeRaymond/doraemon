@@ -86,7 +86,10 @@ class CreateCase:
     with FileMeta() as file:
         for item in file.generating_template():
             obj, func = item
-            func(obj.body['class_name'], obj.body['methods_name'], obj.body['desc'])
+            func(
+                obj.body['class_name'],
+                obj.body['methods_name'],
+                obj.body['desc'])
             data.append(obj.body)
 
     def __iter__(self):
@@ -97,4 +100,3 @@ class CreateCase:
 
     def __repr__(self):
         return json.dumps(self.data)
-

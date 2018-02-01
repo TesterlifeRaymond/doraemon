@@ -32,7 +32,7 @@ class LogHandler(logging.Logger):
     """
     LogHandler
     """
-    
+
     def __init__(self, name, level=DEBUG, stream=True, file=True):
         self.name = name
         self.level = level
@@ -42,7 +42,7 @@ class LogHandler(logging.Logger):
             self.set_stream_handler()
         if file:
             self.set_file_handler()
-    
+
     def set_stream_handler(self, level=None):
         """
         set file handler
@@ -60,11 +60,11 @@ class LogHandler(logging.Logger):
             file_handler.setLevel(level)
         formatter = logging.Formatter(
             '%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s')
-        
+
         file_handler.setFormatter(formatter)
         self.file_handler = file_handler
         self.addHandler(file_handler)
-    
+
     def set_file_handler(self, level=None):
         """
         set stream handler
@@ -80,7 +80,7 @@ class LogHandler(logging.Logger):
         else:
             stream_handler.setLevel(level)
         self.addHandler(stream_handler)
-    
+
     def reset_name(self, name):
         """
         reset name

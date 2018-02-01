@@ -28,7 +28,11 @@ def test_case_runner(func):
                     client = HttpHandler(item.get('body'))
                     result = client.make_request_template()
                     logger.info("Result: {}".format(result))
-                    return func(*args, response=result, kwassert=item.get('body').get('assert'))
+                    return func(
+                        *args,
+                        response=result,
+                        kwassert=item.get('body').get('assert')
+                    )
     return wrap
 
 
@@ -41,7 +45,6 @@ def test_case_parse(func):
         kwassert = kwargs.get('kwassert')
         tmp = tuple(kwassert.keys())
         result = GetDictParam.list_for_key_to_dict(*tmp, my_dict=response)
-        logger.info("response: {}".format(response))
         for key, value in kwassert.items():
             if isinstance(value, list):
                 tp, _value = value
@@ -57,11 +60,9 @@ def test_case_parse(func):
             ensure_ascii=False,
             sort_keys=True,
         )
-        logger.info("assert_resp_values: {}".format(assert_resp_values))
         kwassert_values = json.dumps(
             kwassert, ensure_ascii=False, sort_keys=True
         )
-        logger.info("kwassert_values: {}".format(kwassert_values))
         exec_info = "self.assertEqual({}, {})".format(assert_resp_values, kwassert_values)
         return func(*args, response=result, exec_text=exec_info)
     return wrap
