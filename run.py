@@ -5,19 +5,20 @@
 @: 2018-01-29 15:14:46
 @Version: 1.0
 """
-import click
 import os
 import unittest
+import click
 from src.lib.BeautifulReport import BeautifulReport
 from src.lib import CreateCases
-
-CreateCases.CreateCase()
 
 
 @click.command()
 @click.option('--cases', default='src/testcases/', help="case file path")
 @click.option('--pattern', default='*.py', help="get cases file pattern")
-@click.option('--report', default='src/report/', help="generator report in path")
+@click.option(
+        '--report',
+        default='src/report/',
+        help="generator report in path")
 def run(cases, pattern, report):
     test_suite = unittest.defaultTestLoader.discover(cases, pattern=pattern)
     result = BeautifulReport(test_suite)

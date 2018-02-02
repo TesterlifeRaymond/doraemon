@@ -79,6 +79,8 @@ class FileMeta(config.GetDictParam):
         """ close all files """
         self.headers.close()
         self.content.close()
+        del self.cont
+        del self.head
 
 
 class CreateCase:
