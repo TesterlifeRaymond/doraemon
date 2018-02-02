@@ -1,0 +1,127 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" lang="zh_cn">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>doraemon.tests.test_doraemon_container &#8212; doaremon 1.0 文档</title>
+    <link rel="stylesheet" href="../../../_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="../../../_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../../../',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="../../../_static/jquery.js"></script>
+    <script type="text/javascript" src="../../../_static/underscore.js"></script>
+    <script type="text/javascript" src="../../../_static/doctools.js"></script>
+    <script type="text/javascript" src="../../../_static/translations.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+   
+  <link rel="stylesheet" href="../../../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <h1>doraemon.tests.test_doraemon_container 源代码</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">@Version: 1.0</span>
+<span class="sd">@Project: doraemon</span>
+<span class="sd">@Author: Raymond</span>
+<span class="sd">@Data: 2018/1/31 下午7:43</span>
+<span class="sd">@File: test_doraemon_package.py</span>
+<span class="sd">@License: MIT</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">import</span> <span class="nn">unittest</span>
+<span class="kn">from</span> <span class="nn">src.lib</span> <span class="k">import</span> <span class="n">CasesContainer</span>
+
+
+<div class="viewcode-block" id="CasesContainerCase"><a class="viewcode-back" href="../../../source/doraemon.tests.html#doraemon.tests.test_doraemon_container.CasesContainerCase">[文档]</a><span class="k">class</span> <span class="nc">CasesContainerCase</span><span class="p">(</span><span class="n">unittest</span><span class="o">.</span><span class="n">TestCase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot; test container class &quot;&quot;&quot;</span>
+<div class="viewcode-block" id="CasesContainerCase.test_container_is_not_null"><a class="viewcode-back" href="../../../source/doraemon.tests.html#doraemon.tests.test_doraemon_container.CasesContainerCase.test_container_is_not_null">[文档]</a>    <span class="k">def</span> <span class="nf">test_container_is_not_null</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            test container result is not null</span>
+<span class="sd">        @assert: self.assertIsNotNone</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNotNone</span><span class="p">(</span><span class="n">CasesContainer</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="CasesContainerCase.test_conainer_get_data"><a class="viewcode-back" href="../../../source/doraemon.tests.html#doraemon.tests.test_doraemon_container.CasesContainerCase.test_conainer_get_data">[文档]</a>    <span class="k">def</span> <span class="nf">test_conainer_get_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">            test get container data</span>
+<span class="sd">        @assert: data[&#39;class_name&#39;], data[&#39;methods_name&#39;]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;class_name&quot;</span><span class="p">:</span> <span class="n">CasesContainerCase</span><span class="p">,</span>
+            <span class="s2">&quot;methods_name&quot;</span><span class="p">:</span> <span class="s1">&#39;test_conainer_get_data&#39;</span>
+        <span class="p">}</span>
+        <span class="n">container</span> <span class="o">=</span> <span class="n">CasesContainer</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;class_name&#39;</span><span class="p">],</span> <span class="n">container</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="s1">&#39;class_name&#39;</span><span class="p">])</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertEqual</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;methods_name&#39;</span><span class="p">],</span> <span class="n">container</span><span class="o">.</span><span class="n">body</span><span class="p">[</span><span class="s1">&#39;methods_name&#39;</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="CasesContainerCase.test_notputdata_in_container"><a class="viewcode-back" href="../../../source/doraemon.tests.html#doraemon.tests.test_doraemon_container.CasesContainerCase.test_notputdata_in_container">[文档]</a>    <span class="k">def</span> <span class="nf">test_notputdata_in_container</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot; test notputdata in container</span>
+<span class="sd">        @assert: data is none</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">container</span> <span class="o">=</span> <span class="n">CasesContainer</span><span class="p">({})</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">container</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;class_name&#39;</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">assertIsNone</span><span class="p">(</span><span class="n">container</span><span class="o">.</span><span class="n">body</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;methods_name&#39;</span><span class="p">))</span></div></div>
+
+</pre></div>
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../../../index.html">Documentation overview</a><ul>
+  <li><a href="../../index.html">模块代码</a><ul>
+  </ul></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>快速搜索</h3>
+    <form class="search" action="../../../search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="转向" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2018, Raymond.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+    </div>
+
+    
+
+    
+  </body>
+</html>
